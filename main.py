@@ -24,7 +24,7 @@ if __name__ == '__main__':
     mapping_file = args.mapping_field_file
     file_path = args.file
     if mapping_file is not None:
-        mapping_obj = json.load(mapping_file)
+        mapping_obj = json.load(open(mapping_file))
         response = es.indices.create(
             index=name,
             body=mapping_obj,
